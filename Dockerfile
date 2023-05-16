@@ -10,7 +10,7 @@ COPY . /build
 RUN gradle build -x test --parallel
 
 
-FROM openjdk:17.0-jdk-slim
+FROM openjdk:17.0-slim
 WORKDIR /app
 
 COPY --from=builder /bulid/build/libs/*-SNAPSHOT.jar ./app.jar
